@@ -198,7 +198,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Administrar_Docentes.aspx" />
+    <Content Include="Administrar_Grupos.aspx" />
+    <Content Include="Administrar_Horarios.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -211,7 +213,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Matricula.aspx" />
+    <Content Include="Images\borrar.png" />
+    <Content Include="Images\editar.gif" />
+    <Content Include="Images\fondo_web.jpg" />
+    <Content Include="Images\Fondo.jpg" />
+    <Content Include="Administrar_Matricula.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -367,6 +373,20 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrar_Grupos.aspx.cs">
+      <DependentUpon>Administrar_Grupos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrar_Grupos.aspx.designer.cs">
+      <DependentUpon>Administrar_Grupos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Horarios.aspx.cs">
+      <DependentUpon>Administrar_Horarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrar_Horarios.aspx.designer.cs">
+      <DependentUpon>Administrar_Horarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Administrar_Alumnos.aspx.cs">
       <DependentUpon>Administrar_Alumnos.aspx</DependentUpon>
@@ -378,12 +398,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Administrar_Docentes.aspx.cs">
+      <DependentUpon>Administrar_Docentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Administrar_Docentes.aspx.designer.cs">
+      <DependentUpon>Administrar_Docentes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -395,12 +415,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Matricula.aspx.cs">
-      <DependentUpon>Matricula.aspx</DependentUpon>
+    <Compile Include="Administrar_Matricula.aspx.cs">
+      <DependentUpon>Administrar_Matricula.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Matricula.aspx.designer.cs">
-      <DependentUpon>Matricula.aspx</DependentUpon>
+    <Compile Include="Administrar_Matricula.aspx.designer.cs">
+      <DependentUpon>Administrar_Matricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

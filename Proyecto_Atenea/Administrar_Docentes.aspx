@@ -1,10 +1,6 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrar_Alumnos.aspx.cs" Inherits="Proyecto_Atenea.About" %>
+﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrar_Docentes.aspx.cs" Inherits="Proyecto_Atenea.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>--%>
-    
     <table style="width: 100%;">
        <div>
         <table style="width: 100%;">
@@ -18,46 +14,55 @@
                     Cedula
                 </td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCedulaP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
                     Nombres</td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNombreP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Apellidos</td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtApellidos" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtApellidosP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Correo</td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCorreoP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Direccion</td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDireccionP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Telefono</td>
                 <td colspan="3">
-                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefonoP" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>Estado</td>
+                <td>Tipo de Vinculacion</td>
                 <td colspan="3">
                     <asp:DropDownList ID="DropDownList1" runat="server">
-                        <asp:ListItem>Activo</asp:ListItem>
-                        <asp:ListItem>Inactivo</asp:ListItem>
+                        <asp:ListItem>Planta</asp:ListItem>
+                        <asp:ListItem>Catedra</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Especialidad</td>
+                <td colspan="3">
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem>Deportes</asp:ListItem>
+                        <asp:ListItem>Recreacion</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -75,18 +80,19 @@
                      <asp:Button ID="btnConsultar" runat="server" Text="Consultar" />
                 </td>
             </tr>
-        </table> 
+        </table>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
             <Columns>
-                <asp:BoundField DataField="Cedula" HeaderText="Cedula Alumno" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre Alumno" />
-                <asp:BoundField DataField="Apellidos" HeaderText="Apellidos Alumno" />
+                <asp:BoundField DataField="Cedula" HeaderText="Cedula Profesor" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre Profesor" />
+                <asp:BoundField DataField="Apellidos" HeaderText="Apellidos Profesor" />
                 <asp:BoundField DataField="Correo" HeaderText="Correo" />
                 <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
-                <asp:BoundField DataField="Telefono" HeaderText="Telefono Alumno" />
-                <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" />
+                <asp:BoundField DataField="Telefono" HeaderText="Telefono Profesor" />
+                <asp:BoundField DataField="Vinculacion" HeaderText="Tipo de Vinculacion" />
+                <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" />
+                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" />
+                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" />
             </Columns>
         </asp:GridView>
     </div>
