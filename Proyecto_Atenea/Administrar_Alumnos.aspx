@@ -4,9 +4,8 @@
     <%--<h2><%: Title %>.</h2>
     <h3>Your application description page.</h3>
     <p>Use this area to provide additional information.</p>--%>
-    
-    <table style="width: 100%;">
-       <div>
+      <div> <br />
+
         <table style="width: 100%;">
             <tr>
                 <td colspan="4">
@@ -72,7 +71,7 @@
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                 </td>
                  <td>
-                     <asp:Button ID="btnConsultar" runat="server" Text="Consultar" />
+                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
         </table> 
@@ -85,8 +84,8 @@
                 <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
                 <asp:BoundField DataField="Telefono" HeaderText="Telefono Alumno" />
                 <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" />
+                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
+                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
             </Columns>
         </asp:GridView>
     </div>

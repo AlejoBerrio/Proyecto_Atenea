@@ -3,7 +3,7 @@
     <div> <br />
         <table style="width: 100%;">
             <tr>
-                <td>ID_Grupo:</td>
+                <td>ID Grupo:</td>
                 <td>
                     <asp:TextBox ID="txtId_Grupo" runat="server"></asp:TextBox>
                 </td>
@@ -55,7 +55,7 @@
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                 </td>
                  <td>
-                     <asp:Button ID="btnConsultar" runat="server" Text="Consultar" />
+                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
             <tr>
@@ -68,8 +68,8 @@
                 <asp:BoundField DataField="Id_Horario" HeaderText="ID Horario" />
                 <asp:BoundField DataField="Ced_Alumno" HeaderText="Cedula Alumno" />
                 <asp:BoundField DataField="Id_Matricula" HeaderText="ID Matricula" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" />
+                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
+                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
             </Columns>
         </asp:GridView>
                 </td>

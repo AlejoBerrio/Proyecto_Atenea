@@ -1,13 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrar_Matricula.aspx.cs" Inherits="Proyecto_Atenea.Matricula" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <table style="width: 100%;">
-       <div>
+           <div> <br />
         <table style="width: 100%;">
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                
-            </tr>
+           
             <tr>
                 <td>Codigo Matricula</td>
                 <td colspan="3">
@@ -55,7 +50,7 @@
                 </td>
                 <td>
 
-                    <asp:Button ID="btnConsultar" runat="server" Text="Consultar" />
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
 
                 </td>
 
@@ -68,8 +63,8 @@
                 <asp:BoundField DataField="ID_Alumno" HeaderText="ID_Alumnos" />
                 <asp:BoundField DataField="Valor_Total" HeaderText="Valor Total Matricula" />
                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                <asp:ButtonField ButtonType="Image" DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" />
-                <asp:ButtonField ButtonType="Image" DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" />
+                <asp:ButtonField ButtonType="Image" DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
+                <asp:ButtonField ButtonType="Image" DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
             </Columns>
         </asp:GridView>
     </div>

@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administrar_Docentes.aspx.cs" Inherits="Proyecto_Atenea.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <table style="width: 100%;">
-       <div>
+          <div> <br />
         <table style="width: 100%;">
             <tr>
                 <td colspan="4">
@@ -61,7 +60,7 @@
                 <td>Especialidad</td>
                 <td colspan="3">
                     <asp:DropDownList ID="DropDownList2" runat="server">
-                        <asp:ListItem>Deportes</asp:ListItem>
+                        <asp:ListItem>Rendimiento Fisico</asp:ListItem>
                         <asp:ListItem>Recreacion</asp:ListItem>
                     </asp:DropDownList>
                 </td>
@@ -77,7 +76,7 @@
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                 </td>
                  <td>
-                     <asp:Button ID="btnConsultar" runat="server" Text="Consultar" />
+                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
         </table>
@@ -91,8 +90,8 @@
                 <asp:BoundField DataField="Telefono" HeaderText="Telefono Profesor" />
                 <asp:BoundField DataField="Vinculacion" HeaderText="Tipo de Vinculacion" />
                 <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" />
+                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
+                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
             </Columns>
         </asp:GridView>
     </div>

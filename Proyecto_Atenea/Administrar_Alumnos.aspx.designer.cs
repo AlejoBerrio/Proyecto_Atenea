@@ -103,13 +103,13 @@ namespace Proyecto_Atenea {
         protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
-        /// Control btnConsultar.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultar;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
         /// Control GridView1.

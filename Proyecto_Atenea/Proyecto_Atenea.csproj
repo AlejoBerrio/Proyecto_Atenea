@@ -218,6 +218,8 @@
     <Content Include="Images\fondo_web.jpg" />
     <Content Include="Images\Fondo.jpg" />
     <Content Include="Administrar_Matricula.aspx" />
+    <Content Include="Images\Juegos_Olimpicos.jpg" />
+    <Content Include="Images\Rendimiento_Fisico.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
