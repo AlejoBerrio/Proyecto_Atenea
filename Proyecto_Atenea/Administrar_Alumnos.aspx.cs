@@ -17,28 +17,17 @@ namespace Proyecto_Atenea
             }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void btnConsultar_Click(object sender, EventArgs e)
         {
             List<Alumno> listaAlc = new List<Alumno>();
 
-            Alumno nuevoAlumno = new Alumno();
-
-            nuevoAlumno.Cedula = txtCedula.Text;
-            nuevoAlumno.Nombre = txtNombre.Text;
-            nuevoAlumno.Apellido = txtApellidos.Text;
-            nuevoAlumno.Correo = txtCorreo.Text;
-            nuevoAlumno.Direccion = txtDireccion.Text;
-            nuevoAlumno.Telefono = txtTelefono.Text;
-            nuevoAlumno.Estado = DropDownListAlu.Text;
-
-            if (Session["Alumnos"] != null)
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para consultar los registros
             {
-                listaAlc = ((List<Alumno>)Session["Alumnos"]);
+                listaAlc = (from Alumno in entidad.Alumno select Alumno).ToList();
+
+                GridAlumno.DataSource = listaAlc;
+                GridAlumno.DataBind();
             }
-
-            listaAlc.Add(nuevoAlumno);
-            Session["Alumnos"] = listaAlc;
-
             GridAlumno.DataSource = listaAlc;
             GridAlumno.DataBind();
 
@@ -78,31 +67,28 @@ namespace Proyecto_Atenea
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            string param_cedula = txtCedula.Text;
-
             List<Alumno> listaAlc = new List<Alumno>();
-            if (Session["Alumnos"] != null)
+           
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para consultar los registros
             {
-                listaAlc = ((List<Alumno>)Session["Alumnos"]);
-            }
+                string cedula = txtCedula.Text;
+                Alumno alum = entidad.Alumno.Single(s => s.Cedula == cedula);
+                alum.Nombre = txtNombre.Text;
+                alum.Apellido = txtApellidos.Text;
+                alum.Correo = txtCorreo.Text;
+                alum.Direccion = txtDireccion.Text;
+                alum.Telefono = txtTelefono.Text;
+                alum.Estado = DropDownListAlu.Text;
 
-            int indiceLista =
-            listaAlc.FindIndex(s => s.Cedula == param_cedula);
+                entidad.SaveChanges();
 
-            listaAlc[indiceLista].Nombre = txtNombre.Text;
-            listaAlc[indiceLista].Apellido = txtApellidos.Text;
-            listaAlc[indiceLista].Correo = txtCorreo.Text;
-            listaAlc[indiceLista].Direccion = txtDireccion.Text;
-            listaAlc[indiceLista].Telefono = txtTelefono.Text;
-            listaAlc[indiceLista].Estado = DropDownListAlu.Text;
+                listaAlc = (from Alumno in entidad.Alumno select Alumno).ToList();
 
-            Session["Alumnos"] = listaAlc;// guarde los registros
-
-            GridAlumno.DataSource = listaAlc;
-            GridAlumno.DataBind();
-
-            txtCedula.Enabled = true;
-
+                GridAlumno.DataSource = listaAlc;
+                GridAlumno.DataBind();
+            
+        }
+            
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -110,7 +96,7 @@ namespace Proyecto_Atenea
             string param_cedula = txtCedula.Text;
 
             List<Alumno> listaAlc = new List<Alumno>();
-            if (Session["alumnos"] != null)
+            if (Session["Alumnos"] != null)
             {
                 listaAlc = ((List<Alumno>)Session["Alumnos"]);
             }
@@ -126,6 +112,27 @@ namespace Proyecto_Atenea
             GridAlumno.DataBind();
 
             txtCedula.Enabled = true;
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para guardar los registros
+            {
+
+                Alumno nuevoAlumno = new Alumno();
+
+                nuevoAlumno.Cedula = txtCedula.Text;
+                nuevoAlumno.Nombre = txtNombre.Text;
+                nuevoAlumno.Apellido = txtApellidos.Text;
+                nuevoAlumno.Correo = txtCorreo.Text;
+                nuevoAlumno.Direccion = txtDireccion.Text;
+                nuevoAlumno.Telefono = txtTelefono.Text;
+                nuevoAlumno.Estado = DropDownListAlu.Text;
+
+                entidad.Alumno.Add(nuevoAlumno);
+
+                entidad.SaveChanges();
+            }
         }
     }
 }

@@ -62,7 +62,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                   <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
                 </td>
                 <td>
                     <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
@@ -71,7 +71,7 @@
                      <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                 </td>
                  <td>
-                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
+                    <asp:Button ID="btnConsultar" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
                 </td>
             </tr>
         </table> 

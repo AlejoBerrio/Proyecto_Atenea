@@ -17,32 +17,26 @@ namespace Proyecto_Atenea
             }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            List<Docente> listadct = new List<Docente>();
-
-            Docente nuevoDocente = new Docente();
-
-            nuevoDocente.Ced_Profesor = txtCedulaP.Text;
-            nuevoDocente.Nombre = txtNombreP.Text;
-            nuevoDocente.Apellido = txtApellidosP.Text;
-            nuevoDocente.Correo = txtCorreoP.Text;
-            nuevoDocente.Direccion = txtDireccionP.Text;
-            nuevoDocente.Telefono = txtTelefonoP.Text;
-            nuevoDocente.Tipo_Vinculacion = DropDownListP.Text;
-            nuevoDocente.Especialidad = DropDownListEsp.Text;
-
-            if (Session["Docentes"] != null)
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para guardar los registros
             {
-                listadct = ((List<Docente>)Session["Docentes"]);
+
+                Docente nuevodct = new Docente();
+
+                nuevodct.Ced_Profesor = txtCedulaP.Text;
+                nuevodct.Nombre = txtNombreP.Text;
+                nuevodct.Apellido = txtApellidosP.Text;
+                nuevodct.Correo = txtCorreoP.Text;
+                nuevodct.Direccion = txtDireccionP.Text;
+                nuevodct.Telefono = txtTelefonoP.Text;
+                nuevodct.Especialidad = DropDownListEsp.Text;
+                nuevodct.Tipo_Vinculacion = DropDownListP.Text;
+
+                entidad.Docente.Add(nuevodct);
+
+                entidad.SaveChanges();
             }
-
-            listadct.Add(nuevoDocente);
-            Session["Docentes"] = listadct;
-
-            GridDocente.DataSource = listadct;
-            GridDocente.DataBind();
-
         }
 
         protected void GridDocente_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -81,34 +75,29 @@ namespace Proyecto_Atenea
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            List<Docente> listadct = new List<Docente>();
+
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para consultar los registros
             {
-                string param_cedulaD = txtCedulaP.Text;
+                string cedula = txtCedulaP.Text;
+                Docente dct = entidad.Docente.Single(D => D.Ced_Profesor == cedula);
+                dct.Nombre = txtNombreP.Text;
+                dct.Apellido = txtApellidosP.Text;
+                dct.Correo = txtCorreoP.Text;
+                dct.Direccion = txtDireccionP.Text;
+                dct.Telefono = txtTelefonoP.Text;
+                dct.Tipo_Vinculacion = DropDownListP.Text;
+                dct.Especialidad = DropDownListEsp.Text;
 
-                List<Docente> listadct = new List<Docente>();
-                if (Session["Docentes"] != null)
-                {
-                    listadct = ((List<Docente>)Session["Docentes"]);
-                }
+                entidad.SaveChanges();
 
-                int indiceLista =
-                listadct.FindIndex(s => s.Ced_Profesor == param_cedulaD);
-
-                listadct[indiceLista].Nombre = txtNombreP.Text;
-                listadct[indiceLista].Apellido = txtApellidosP.Text;
-                listadct[indiceLista].Correo = txtCorreoP.Text;
-                listadct[indiceLista].Direccion = txtDireccionP.Text;
-                listadct[indiceLista].Telefono = txtTelefonoP.Text;
-                listadct[indiceLista].Tipo_Vinculacion = DropDownListP.Text;
-                listadct[indiceLista].Especialidad = DropDownListEsp.Text;
-
-                Session["Alumnos"] = listadct;// guarde los registros
+                listadct = (from Docente in entidad.Docente select Docente).ToList();
 
                 GridDocente.DataSource = listadct;
                 GridDocente.DataBind();
 
-                txtCedulaP.Enabled = true;
-
             }
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -132,6 +121,20 @@ namespace Proyecto_Atenea
             GridDocente.DataBind();
 
             txtCedulaP.Enabled = true;
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            List<Docente> listadct = new List<Docente>();
+
+            using (DB_AteneaEntities entidad = new DB_AteneaEntities()) //Usar DB para consultar los registros
+            {
+                listadct = (from Docente in entidad.Docente select Docente).ToList();
+
+                GridDocente.DataSource = listadct;
+                GridDocente.DataBind();
+            }
+
         }
     }
 }
