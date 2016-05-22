@@ -67,16 +67,16 @@
             
         </table>
          <div>
-              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="843px">
             <Columns>
-                <asp:BoundField DataField="Id_Horario" HeaderText="ID Horario" />
+                <asp:BoundField DataField="ID_Horario" HeaderText="ID Horario" />
                 <asp:BoundField DataField="Aula" HeaderText="Aula de Clase" />
                 <asp:BoundField DataField="Horario_Inicio" HeaderText="Horario Inicio" />
                 <asp:BoundField DataField="Horario_Fin" HeaderText="Horario Fin" />
                 <asp:BoundField DataField="ID_Grupo" HeaderText="ID Grupo" />
                 <asp:BoundField DataField="Dia" HeaderText="Dia" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
+                <asp:ButtonField HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" CommandName="Eliminar" />
+                <asp:ButtonField HeaderText="Modificar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" CommandName="Eliminar" />
             </Columns>
         </asp:GridView>
 

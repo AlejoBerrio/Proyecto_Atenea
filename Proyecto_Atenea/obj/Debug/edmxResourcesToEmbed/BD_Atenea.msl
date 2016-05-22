@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_AteneaModelStoreContainer" CdmEntityContainer="DB_AteneaEntities">
+    <EntitySetMapping Name="Alumno">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Alumno">
+        <MappingFragment StoreEntitySet="Alumno">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Docente">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Docente">
+        <MappingFragment StoreEntitySet="Docente">
+          <ScalarProperty Name="Ced_Profesor" ColumnName="Ced_Profesor" />
+          <ScalarProperty Name="Tipo_Vinculacion" ColumnName="Tipo_Vinculacion" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupo">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Grupo">
+        <MappingFragment StoreEntitySet="Grupo">
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="Aula" ColumnName="Aula" />
+          <ScalarProperty Name="Ced_Profesor" ColumnName="Ced_Profesor" />
+          <ScalarProperty Name="ID_Horario" ColumnName="ID_Horario" />
+          <ScalarProperty Name="Ced_Alumno" ColumnName="Ced_Alumno" />
+          <ScalarProperty Name="ID_Matricula" ColumnName="ID_Matricula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horario">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Horario">
+        <MappingFragment StoreEntitySet="Horario">
+          <ScalarProperty Name="ID_Horario" ColumnName="ID_Horario" />
+          <ScalarProperty Name="Aula" ColumnName="Aula" />
+          <ScalarProperty Name="Horario_Inicio" ColumnName="Horario_Inicio" />
+          <ScalarProperty Name="Horario_Fin" ColumnName="Horario_Fin" />
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matricula">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Matricula">
+        <MappingFragment StoreEntitySet="Matricula">
+          <ScalarProperty Name="Cod_Matricula" ColumnName="Cod_Matricula" />
+          <ScalarProperty Name="ID_Grupo" ColumnName="ID_Grupo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Valor_Total" ColumnName="Valor_Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login">
+      <EntityTypeMapping TypeName="DB_AteneaModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

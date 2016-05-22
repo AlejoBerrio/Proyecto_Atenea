@@ -54,7 +54,7 @@
             <tr>
                 <td>Estado</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownListAlu" runat="server">
                         <asp:ListItem>Activo</asp:ListItem>
                         <asp:ListItem>Inactivo</asp:ListItem>
                     </asp:DropDownList>
@@ -62,30 +62,30 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="btnModificar" runat="server" Text="Modificar" />
+                    <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
                 </td>
                  <td>
-                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                 </td>
                  <td>
                      <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
         </table> 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridAlumno" runat="server" AutoGenerateColumns="False" OnRowCommand="GridAlumno_RowCommand" Width="845px">
             <Columns>
                 <asp:BoundField DataField="Cedula" HeaderText="Cedula Alumno" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre Alumno" />
-                <asp:BoundField DataField="Apellidos" HeaderText="Apellidos Alumno" />
-                <asp:BoundField DataField="Correo" HeaderText="Correo" />
-                <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellidos Alumno" />
+                <asp:BoundField DataField="Correo" HeaderText="Correo Alumno" />
+                <asp:BoundField DataField="Direccion" HeaderText="Direccion Alumno" />
                 <asp:BoundField DataField="Telefono" HeaderText="Telefono Alumno" />
                 <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
+                <asp:ButtonField HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" CommandName="Eliminar" />
+                <asp:ButtonField HeaderText="Modificar" Text="Editar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" CommandName="Editar" />
             </Columns>
         </asp:GridView>
     </div>

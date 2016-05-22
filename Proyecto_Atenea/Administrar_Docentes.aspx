@@ -50,7 +50,7 @@
             <tr>
                 <td>Tipo de Vinculacion</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownListP" runat="server">
                         <asp:ListItem>Planta</asp:ListItem>
                         <asp:ListItem>Catedra</asp:ListItem>
                     </asp:DropDownList>
@@ -59,7 +59,7 @@
             <tr>
                 <td>Especialidad</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="DropDownList2" runat="server">
+                    <asp:DropDownList ID="DropDownListEsp" runat="server">
                         <asp:ListItem>Rendimiento Fisico</asp:ListItem>
                         <asp:ListItem>Recreacion</asp:ListItem>
                     </asp:DropDownList>
@@ -67,31 +67,31 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="btnModificar" runat="server" Text="Modificar" />
+                    <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
                 </td>
                  <td>
-                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                 </td>
                  <td>
                      <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
                 </td>
             </tr>
         </table>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridDocente" runat="server" AutoGenerateColumns="False" OnRowCommand="GridDocente_RowCommand">
             <Columns>
-                <asp:BoundField DataField="Cedula" HeaderText="Cedula Profesor" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre Profesor" />
-                <asp:BoundField DataField="Apellidos" HeaderText="Apellidos Profesor" />
-                <asp:BoundField DataField="Correo" HeaderText="Correo" />
-                <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
-                <asp:BoundField DataField="Telefono" HeaderText="Telefono Profesor" />
-                <asp:BoundField DataField="Vinculacion" HeaderText="Tipo de Vinculacion" />
-                <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" />
-                <asp:ButtonField DataTextField="Eliminar" HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" />
-                <asp:ButtonField DataTextField="Modificar" HeaderText="Modificar" Text="Modificar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" />
+                <asp:BoundField DataField="Ced_Profesor" HeaderText="Cedula Doc" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre Doc" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellidos Doc" />
+                <asp:BoundField DataField="Correo" HeaderText="Correo Doc" />
+                <asp:BoundField DataField="Direccion" HeaderText="Direccion Doc" />
+                <asp:BoundField DataField="Telefono" HeaderText="Telefono Doc" />
+                <asp:BoundField DataField="Tipo_Vinculacion" HeaderText="Tipo de Vinculacion" />
+                <asp:BoundField DataField="Especialidad" HeaderText="Especialidad Doc" />
+                <asp:ButtonField HeaderText="Eliminar" Text="Eliminar" ButtonType="Image" HeaderImageUrl="~/Images/borrar.png" ImageUrl="~/Images/borrar.png" CommandName="Eliminar" />
+                <asp:ButtonField HeaderText="Modificar" Text="Editar" ButtonType="Image" HeaderImageUrl="~/Images/editar.gif" ImageUrl="~/Images/editar.gif" CommandName="Editar" />
             </Columns>
         </asp:GridView>
     </div>

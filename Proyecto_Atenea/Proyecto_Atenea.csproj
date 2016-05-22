@@ -81,6 +81,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -201,6 +203,16 @@
     <Content Include="Administrar_Docentes.aspx" />
     <Content Include="Administrar_Grupos.aspx" />
     <Content Include="Administrar_Horarios.aspx" />
+    <Content Include="BD_Atenea.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD_Atenea.edmx</DependentUpon>
+      <LastGenOutput>BD_Atenea.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BD_Atenea.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD_Atenea.edmx</DependentUpon>
+      <LastGenOutput>BD_Atenea.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -211,6 +223,13 @@
     <Content Include="Account\Web.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="BD_Atenea.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BD_Atenea.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BD_Atenea.edmx.diagram">
+      <DependentUpon>BD_Atenea.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\borrar.png" />
@@ -389,6 +408,9 @@
     <Compile Include="Administrar_Horarios.aspx.designer.cs">
       <DependentUpon>Administrar_Horarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Alumno.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Administrar_Alumnos.aspx.cs">
       <DependentUpon>Administrar_Alumnos.aspx</DependentUpon>
@@ -407,12 +429,30 @@
     <Compile Include="Administrar_Docentes.aspx.designer.cs">
       <DependentUpon>Administrar_Docentes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BD_Atenea.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_Atenea.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Atenea.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Atenea.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_Atenea.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Docente.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -423,6 +463,19 @@
     </Compile>
     <Compile Include="Administrar_Matricula.aspx.designer.cs">
       <DependentUpon>Administrar_Matricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grupo.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Horario.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula.cs">
+      <DependentUpon>BD_Atenea.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -451,6 +504,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

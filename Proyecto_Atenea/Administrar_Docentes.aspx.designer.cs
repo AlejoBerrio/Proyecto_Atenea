@@ -67,22 +67,22 @@ namespace Proyecto_Atenea {
         protected global::System.Web.UI.WebControls.TextBox txtTelefonoP;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control DropDownListP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListP;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control DropDownListEsp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEsp;
         
         /// <summary>
         /// Control btnAgregar.
@@ -121,12 +121,12 @@ namespace Proyecto_Atenea {
         protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control GridDocente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridDocente;
     }
 }
